@@ -32,6 +32,7 @@ req.onreadystatechange = function(){
         }
     }
 }
+
 req.send();
 
 function selectAll(btn){
@@ -54,6 +55,7 @@ function selectAll(btn){
     
 }
 
+
 function slideShow(btn){
     var images = document.getElementsByClassName("image");
     var index = 0;
@@ -72,3 +74,7 @@ function slideShow(btn){
         
     }, 1000);
 }
+
+$(document).on('click', '#remove', function(){
+    $(document.getElementsByClassName("image")).remove();
+ })
