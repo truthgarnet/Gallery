@@ -13,13 +13,15 @@
  ![image](https://user-images.githubusercontent.com/57488270/141668494-6eebea78-57da-4d43-85eb-59b561486ca1.png)
  </br>
   You should add chrome.exe 
-  --disable-web-security --user-data-dir="C:\chrome"
+  ```--disable-web-security --user-data-dir="C:\chrome"```
   
-  If you want to add picture at WebSite, You have to add code 
-  "document.cookie = "safeCookie1=foo; SameSite=Lax";
-    document.cookie = "safeCookie2=foo";
-    document.cookie = "crossCookie=bar; SameSite=None; Secure";
-"
+  If you want to <b>add picture</b> at WebSite, You have to add code 
+  </br>
+  ```js
+   document.cookie = "safeCookie1=foo; SameSite=Lax";
+   document.cookie = "safeCookie2=foo";    
+   document.cookie = "crossCookie=bar; SameSite=None; Secure";
+```
 
  
  # Add
