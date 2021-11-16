@@ -15,6 +15,11 @@
   You should add chrome.exe 
   --disable-web-security --user-data-dir="C:\chrome"
   
+  If you want to add picture at WebSite, You have to add code 
+  "document.cookie = "safeCookie1=foo; SameSite=Lax";
+    document.cookie = "safeCookie2=foo";
+    document.cookie = "crossCookie=bar; SameSite=None; Secure";
+"
 
  
  # Add

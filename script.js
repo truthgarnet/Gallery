@@ -1,4 +1,8 @@
 var req = new XMLHttpRequest();
+document.cookie = "safeCookie1=foo; SameSite=Lax";
+document.cookie = "safeCookie2=foo";
+document.cookie = "crossCookie=bar; SameSite=None; Secure";
+
 req.open("GET", "./json/image_list.json");
 req.onreadystatechange = function(){
     if( this.readyState == 4){
@@ -75,6 +79,16 @@ function slideShow(btn){
     }, 1000);
 }
 
-$(document).on('click', '#remove', function(){
+$(document).on('click', '#removeAll', function(){
     $(document.getElementsByClassName("image")).remove();
  })
+
+$(document).on('click', '#append', function() {
+    let append = prompt("추가하고 싶은 src");
+    var img = document.createElement("img");
+    img.src = append;
+    var div = document.createElement("div");
+    div.setAttribute("class", "image");
+    div.appendChild(img);
+    document.body.appendChild(div);
+})
