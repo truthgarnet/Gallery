@@ -11,13 +11,14 @@ req.onreadystatechange = function(){
         for( var i = 0 ; i < data.length; i++){
             var div = document.createElement("div");
             div.setAttribute("class", "image");
+            div.setAttribute("id", "image")
             div.onclick = function(){
-                /*if(this.getAttribute("class").indexOf("image-selected") == -1){
-                    this.setAttribute("class", "image image-selected");     
-                }else{
-                    this.setAttribute("class", "image");     
-                }*/
                this.classList.toggle("image-selected");
+               $(document).on('click', '#remove', function() {
+                if(document.getElementById("image").className == "image image-selected"){
+                    $(document.getElementsByClassName("image image-selected")).remove();
+                }
+             })
             }
             div.onmouseover = function(){
                 var element = this;
@@ -82,6 +83,8 @@ function slideShow(btn){
 $(document).on('click', '#removeAll', function(){
     $(document.getElementsByClassName("image")).remove();
  })
+
+ 
 
 $(document).on('click', '#append', function() {
     let append = prompt("추가하고 싶은 src");
